@@ -10,4 +10,7 @@
     <string name="write_baud_rate">请输入波特率</string>
     <string name="_19200">19200</string>
     <string name="ttys0">ttyS0</string>
+    <string name="get">获取重量</string>
+    <string name="set_zero">置零</string>
+    <string name="clear">清空数据区</string>
 </resources>

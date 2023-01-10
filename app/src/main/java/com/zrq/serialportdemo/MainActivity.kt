@@ -10,7 +10,6 @@ import tp.xmaihh.serialport.bean.ComBean
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.experimental.and
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +58,10 @@ class MainActivity : AppCompatActivity() {
                 setLog2("发送数据: 00 63 06 03 6E")
                 sendData(byteArrayOf(0x00, 0x63, 0x06, 0x03, 0x6c))
                 sendData2(byteArrayOf(0x00, 0x63, 0x06, 0x03, 0x6c))
+            }
+            btnClear.setOnClickListener {
+                mBinding.tvMsg.text = ""
+                mBinding.tvMsg2.text = ""
             }
         }
     }
