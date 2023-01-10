@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SerialPortDemo</string>
+    <string name="send_msg">Send Msg</string>
+    <string name="reset">reset</string>
+    <string name="set_serial">填写串口线</string>
+    <string name="dev">dev/</string>
+    <string name="ttys1">ttyS1</string>
+    <string name="open">打开串口</string>
+    <string name="baud_rate">波特率</string>
+    <string name="write_baud_rate">请输入波特率</string>
+    <string name="_19200">19200</string>
+    <string name="ttys0">ttyS0</string>
+</resources>
