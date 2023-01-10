@@ -49,14 +49,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             btnSendMsg.setOnClickListener {
-                setLog("发送数据： 02 05 02 05 0E")
-                setLog2("发送数据： 02 05 02 05 0E")
+                setLog("发送数据: 02 05 02 05 0E")
+                setLog2("发送数据: 02 05 02 05 0E")
                 sendData(byteArrayOf(0x02, 0x05, 0x02, 0x05, 0x0E))
                 sendData2(byteArrayOf(0x02, 0x05, 0x02, 0x05, 0x0E))
             }
             btnReset.setOnClickListener {
-                setLog("发送数据： 00 63 06 03 6E")
-                setLog2("发送数据： 00 63 06 03 6E")
+                setLog("发送数据: 00 63 06 03 6E")
+                setLog2("发送数据: 00 63 06 03 6E")
                 sendData(byteArrayOf(0x00, 0x63, 0x06, 0x03, 0x6c))
                 sendData2(byteArrayOf(0x00, 0x63, 0x06, 0x03, 0x6c))
             }
@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
             override fun onDataReceived(paramComBean: ComBean) {
                 try {
                     val list = paramComBean.bRec.map { it.toInt().and(0xFF) }
-                    setLog("接收数据: $list")
+                    setLog("接收数据: ${list.map { String.format("%02x", it) }.toString().replace(",", " ")}")
                     Log.d(TAG, "list1: $list")
                     if (list.size >= 8) {
                         if (list[1] == 0x05 + 1 && list[2] == 0x02) {
@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
             override fun onDataReceived(paramComBean: ComBean) {
                 try {
                     val list = paramComBean.bRec.map { it.toInt().and(0xFF) }
-                    setLog2("接收数据: $list")
+                    setLog2("接收数据: ${list.map { String.format("%02x", it) }.toString().replace(",", " ")}")
                     Log.d(TAG, "list1: $list")
                     if (list.size >= 8) {
                         if (list[1] == 0x05 + 1 && list[2] == 0x02) {
